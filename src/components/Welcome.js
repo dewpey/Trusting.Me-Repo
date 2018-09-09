@@ -131,8 +131,8 @@ class Welcome extends Component {
         </ConnectUportVote>
         </WelcomeWrap>
         <WelcomeWrap> 
-        <h1>Buck an ad.</h1>
-        <SubText><b>Tier 3:</b> Verify yourself as a legitimate advertiser for Adchain</SubText>
+        <h1>Buck something.</h1>
+        <SubText><b>Tier 3:</b> Verify yourself as a legitimate, unique user</SubText>
         <ConnectUport
           onClick={this.ConnectLinkedIn}>
           LinkedIn

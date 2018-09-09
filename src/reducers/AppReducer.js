@@ -34,6 +34,18 @@ export default(state = initialState, payload) => {
         uport: payload.data,
         ConnectPlaid: true
       }  
+      case 'CONNECT_ADCHAIN':
+      return {
+        ...state,
+        uport: payload.data,
+        ConnectAdChain: true
+      }  
+      case 'CONNECT_DECENT':
+      return {
+        ...state,
+        uport: payload.data,
+        ConnectDecent: true
+      }  
     case 'GET_CURRENT_SHARES_REQUEST':
       return {
         ...state,

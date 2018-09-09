@@ -36,6 +36,18 @@ export const ConnectPlaid = (data) => {
     data
   }
 }
+export const ConnectDecent = (data) => {
+  return {
+    type: 'CONNECT_DECENT',
+    data
+  }
+}
+export const ConnectAdChain = (data) => {
+  return {
+    type: 'CONNECT_ADCHAIN',
+    data
+  }
+}
 // //////////////////////////////////////////////
 // Get Current Shares
 // //////////////////////////////////////////////

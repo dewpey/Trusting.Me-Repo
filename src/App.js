@@ -17,6 +17,8 @@ import LogOut from './components/LogOut'
 import MakerDaoLoan from './components/MakerDaoLoan' 
 import ConnectLinkedIn from './components/ConnectLinkedIn'
 import ConnectPlaid from './components/ConnectPlaid'
+import ConnectAdChain from './components/ConnectAdChain'
+import ConnectDecent from './components/ConnectDecent'
 const AppWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -85,8 +87,18 @@ class App extends Component {
               : null
           }
           {
-            this.props.logOutPage
+            this.props.MakerDaoLoan
               ? <MakerDaoLoan />
+              : null
+          }
+          {
+            this.props.ConnectAdChain
+              ? <ConnectAdChain />
+              : null
+          }
+          {
+            this.props.ConnectDecent
+              ? <ConnectDecent />
               : null
           }
           {
@@ -110,6 +122,8 @@ const mapStateToProps = (state, props) => {
     MakerDaoLoan: state.App.MakerDaoLoan,
     ConnectLinkedIn: state.App.ConnectLinkedIn,
     ConnectPlaid: state.App.ConnectPlaid,
+    ConnectDecent: state.App.ConnectDecent,
+    ConnectAdChain: state.App.ConnectAdChain,
   }
 }
 const mapDispatchToProps = (dispatch) => {

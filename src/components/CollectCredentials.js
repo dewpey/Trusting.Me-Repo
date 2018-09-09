@@ -6,10 +6,7 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as AppActions from '../actions/AppActions'
 import styled from 'styled-components'
-import {BrowserBarcodeReader, VideoInputDevice, video} from '@zxing/library';
-import PlaidLink from 'react-plaid-link';
-
-const codeReader = new BrowserBarcodeReader();
+import { Button, Form, FormGroup, Label, Input, FormText, Col} from 'reactstrap'
 
 const CredentialsWrap = styled.section `
   @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -162,37 +159,35 @@ class CollectCredentials extends Component {
     render(props) {
         
         return (
-            <div>
-            <PlaidLink
-            clientName="Trusting.me"
-            env="sandbox"
-            product={["auth","transactions"]}
-            publicKey="edf22493e721471cd922137e004a59"
-            onExit={this.handleOnExit}
-            onSuccess={this.handleOnSuccess}>
-            Open Link and connect your bank!
-          </PlaidLink>
-                <form>
-                   
-                <h4>Register user to vote.</h4>
-                    <input
-                        id="name"
-                        placeholder='Name'
-                        value={this.props.uport.name}
-                        onChange={this.handleChange}/>
-                    <input
-                        id="address"
-                        placeholder='Address'
-                        value={this.props.uport.address}
-                        onChange={this.handleChange}/>
-                    <input
-                        id="party"
-                        placeholder='Party'
-                        value={this.props.uport.party}
-                        onChange={this.handleChange}/>
-                    <CredsButton onClick={this.credentialsbtnClickD}>Set</CredsButton>
-                </form>
-                </div>
+            <CredentialsWrap>
+                <Form>
+        <FormGroup row>
+          <Label for="name" sm={2}>Name</Label>
+          <Col sm={5}>
+            <Input type="name" name="name" id="name" placeholder="" value={this.props.uport.name} onChange={this.handleChange} />
+          </Col>
+        </FormGroup>
+        <FormGroup row>
+          <Label for="address" sm={2}>Address</Label>
+          <Col sm={5}>
+            <Input type="address" name="address" id="address" placeholder="" value={this.state.address} onChange={this.handleChange} />
+          </Col>
+        </FormGroup>
+        <FormGroup row>
+          <Label for="partySelect" sm={2}>Select party</Label>
+          <Col sm={5}>
+          <Input type="select" name="party" id="party">
+            <option>Democrat</option>
+            <option>Republican</option>
+            <option>Independent</option>
+            <option>Constitutional</option>
+            <option>Green</option>
+          </Input>
+          </Col>
+        </FormGroup>
+        <CredsButton onClick={this.credentialsbtnClickD}>Submit</CredsButton>
+        </Form>
+        </CredentialsWrap>
         )
     }
 }

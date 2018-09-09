@@ -184,7 +184,7 @@ class SignTransaction extends Component {
                         | {this.state.party2}
                     </RadioButton>
                     <RadioButton value="3">
-                        Our Savior Joe Lubin
+                        Joe Lubin
                     </RadioButton>
                 </RadioGroup>
                 <NextButton onClick={this.buyShares}>Next</NextButton>

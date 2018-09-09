@@ -23,6 +23,8 @@ class Welcome extends Component {
     this.MakerDaoLoan = this.MakerDaoLoan.bind(this)
     this.ConnectLinkedIn = this.ConnectLinkedIn.bind(this)
     this.ConnectPlaid = this.ConnectPlaid.bind(this)
+    this.ConnectDecent = this.ConnectDecent.bind(this)
+    this.ConnectAdChain = this.ConnectAdChain.bind(this)
     
   }
 
@@ -75,6 +77,26 @@ class Welcome extends Component {
         this.props.actions.ConnectPlaid(credentials)
     })
   }
+
+  ConnectDecent () {
+    uport.requestCredentials(
+      { requested: ['name','country','avatar'],
+        notifications: true }
+    ).then((credentials) => {
+        console.log({credentials})
+        this.props.actions.ConnectDecent(credentials)
+    })
+  }
+  ConnectAdChain () {
+    uport.requestCredentials(
+      { requested: ['name','country','avatar'],
+        notifications: true }
+    ).then((credentials) => {
+        console.log({credentials})
+        this.props.actions.ConnectAdChain(credentials)
+    })
+  }
+  
   
 
   render () {
@@ -97,7 +119,7 @@ class Welcome extends Component {
         </WelcomeWrap> 
         <WelcomeWrap> 
         <h1>Buck a loan.</h1>
-        <SubText><b>Tier 2</b> Get a loan with your identity, Plaid, and MakerDao</SubText>
+        <SubText><b>Tier 2:</b> Get a loan with your identity, Plaid, and MakerDao</SubText>
         <ConnectUport
           onClick={this.ConnectPlaid}>
           Plaid
@@ -109,16 +131,20 @@ class Welcome extends Component {
         </ConnectUportVote>
         </WelcomeWrap>
         <WelcomeWrap> 
-        <h1>Buck the event.</h1>
-        <SubText><b>Tier 3:</b> Verify yourself as not a bot and get event tickets with Decent</SubText>
+        <h1>Buck an ad.</h1>
+        <SubText><b>Tier 3:</b> Verify yourself as a legitimate advertiser for Adchain</SubText>
         <ConnectUport
           onClick={this.ConnectLinkedIn}>
           LinkedIn
         </ConnectUport>
         <br/>
         <ConnectUportVote
-          onClick={this.connectUportVote}>
-          Get a ticket
+          onClick={this.ConnectAdChain}>
+          Purchase an ad
+        </ConnectUportVote>
+        <ConnectUportVote
+          onClick={this.ConnectDecent}>
+          Purchase a ticket
         </ConnectUportVote>
         </WelcomeWrap> 
       </Columns>
@@ -134,6 +160,8 @@ const mapStateToProps = (state, props) => {
     MakerDaoLoan: state.App.MakerDaoLoan,
     ConnectLinkedIn: state.App.ConnectLinkedIn,
     ConnectPlaid: state.App.ConnectPlaid,
+    ConnectAdChain: state.App.ConnectAdChain,
+    ConnectDecent: state.App.ConnectDecent,
   }
 }
 const mapDispatchToProps = (dispatch) => {

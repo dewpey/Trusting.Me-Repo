@@ -46,7 +46,7 @@ class Welcome extends Component {
   render () {
     return (
       <WelcomeWrap>
-        <h4>Buck the vote.</h4>
+        <h1>Buck the vote.</h1>
         <SubText>Voter registration and voting system on Ethereum.</SubText>
         <ConnectUport
           onClick={this.connectUport}>
@@ -55,7 +55,7 @@ class Welcome extends Component {
         <br/>
         <ConnectUportVote
           onClick={this.connectUportVote}>
-          Register voter
+          Voter registration
         </ConnectUportVote>
       </WelcomeWrap>
     )

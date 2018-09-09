@@ -9,7 +9,7 @@ import * as AppActions from '../actions/AppActions'
 import styled from 'styled-components'
 
 const NavBar = styled.nav`
-  color: #FFFFFF;
+  color: #667AF4;
   padding: 20px 40px;
   font-size: 18px;
   display: flex;
@@ -17,7 +17,7 @@ const NavBar = styled.nav`
   align-items: center;
 `
 const LogoLink = styled.a`
-  color: #FFFFFF;
+  color: #586271;
   text-decoration: none;
 `
 const DemoText = styled.span`

@@ -11,8 +11,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #34344F;
-  color: white;
+  background: rgb(255, 255, 255);
+  color: #586271;
 }
 
 *:disabled { cursor: not-allowed !important }
@@ -25,8 +25,9 @@ button {
   color: #FFFFFF;
   padding: 18px 50px;
   border-radius: 4px;
-  background-color: #5C58CA;
+  background-color: #667AF4;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+  margin: 10px;
 }
 
 img {
@@ -39,7 +40,7 @@ section {
 }
 
 a {
-  color: white;
+  color: #586271;
   text-decoration: none;
   display: inline-block;
 }
@@ -51,10 +52,17 @@ a.external {
   text-decoration: underline;
 }
 
+h1 {
+  color: #192332;
+  font-size: 54px;
+  font-family: 'Arimo', sans-serif;
+  font-weight: 900;
+}
+
 h4 {
   margin: 0 auto;
   font-size: 36px;
-  color: white;
+  color: #586271;
 }
 
 h6 {
@@ -132,6 +140,6 @@ h6 {
 }
 
 @keyframes spinner-fade {
-  0%   { background-color: #cbd1da; }
+  0%   { background-color: #667AF4; }
   100% { background-color: transparent; }
 }

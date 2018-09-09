@@ -39,7 +39,7 @@ const UserName = styled.span`
   display: inline-block;
   vertical-align: middle;
   font-size: 18px;
-  color: white;
+  color: #192332;
   text-align: right;
   margin-right: 1em;
 `

@@ -23,6 +23,19 @@ export const MakerDaoLoan = (data) => {
   }
 }
 
+export const ConnectLinkedIn = (data) => {
+  return {
+    type: 'CONNECT_LINKEDIN',
+    data
+  }
+}
+
+export const ConnectPlaid = (data) => {
+  return {
+    type: 'CONNECT_PLAID',
+    data
+  }
+}
 // //////////////////////////////////////////////
 // Get Current Shares
 // //////////////////////////////////////////////

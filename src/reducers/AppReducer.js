@@ -22,6 +22,18 @@ export default(state = initialState, payload) => {
         uport: payload.data,
         MakerDaoLoan: true
       }  
+      case 'CONNECT_LINKEDIN':
+      return {
+        ...state,
+        uport: payload.data,
+        ConnectLinkedIn: true
+      }  
+      case 'CONNECT_PLAID':
+      return {
+        ...state,
+        uport: payload.data,
+        ConnectPlaid: true
+      }  
     case 'GET_CURRENT_SHARES_REQUEST':
       return {
         ...state,

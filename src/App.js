@@ -1,6 +1,6 @@
 // Frameworks
 import React, { Component } from 'react'
-
+import { Route, Link, Router } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as AppActions from './actions/AppActions'
@@ -15,6 +15,8 @@ import CollectCredentials from './components/CollectCredentials'
 import RegisterYourApp from './components/RegisterYourApp'
 import LogOut from './components/LogOut'
 import MakerDaoLoan from './components/MakerDaoLoan' 
+import ConnectLinkedIn from './components/ConnectLinkedIn'
+import ConnectPlaid from './components/ConnectPlaid'
 const AppWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -51,6 +53,26 @@ class App extends Component {
               : null
           }
           {
+            this.props.ConnectPlaid === true
+            ? <ConnectPlaid />
+              : null
+          }
+          {
+            this.props.MakerDaoLoan === true
+            ? <MakerDaoLoan />
+              : null
+          }
+          {
+            this.props.ConnectLinkedIn === true
+            ? <ConnectLinkedIn />
+              : null
+          }
+          {
+            this.props.ConnectPlaid === true
+            ? <ConnectPlaid />
+              : null
+          }
+          {
             this.props.signTransactionPage === true &&
             !this.props.collectCredentialsPage
               ? <SignTransaction />
@@ -64,10 +86,15 @@ class App extends Component {
           }
           {
             this.props.logOutPage
-              ? <LogOut />
+              ? <MakerDaoLoan />
               : null
           }
-        </AppBody>
+          {
+            this.props.logOutPage
+              ? <LogOut />
+              : null
+          }        
+          </AppBody>
       </AppWrap>
     )
   }
@@ -81,6 +108,8 @@ const mapStateToProps = (state, props) => {
     registerYourAppPage: state.App.registerYourAppPage,
     logOutPage: state.App.logOutPage,
     MakerDaoLoan: state.App.MakerDaoLoan,
+    ConnectLinkedIn: state.App.ConnectLinkedIn,
+    ConnectPlaid: state.App.ConnectPlaid,
   }
 }
 const mapDispatchToProps = (dispatch) => {

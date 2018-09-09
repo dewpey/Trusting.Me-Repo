@@ -21,6 +21,8 @@ class Welcome extends Component {
     this.connectUport = this.connectUport.bind(this)
     this.connectUportVote = this.connectUportVote.bind(this)
     this.MakerDaoLoan = this.MakerDaoLoan.bind(this)
+    this.ConnectLinkedIn = this.ConnectLinkedIn.bind(this)
+    this.ConnectPlaid = this.ConnectPlaid.bind(this)
   }
 
   connectUport () {
@@ -53,6 +55,27 @@ class Welcome extends Component {
     })
   }
 
+  ConnectLinkedIn () {
+    uport.requestCredentials(
+      { requested: ['name','country','avatar'],
+        notifications: true }
+    ).then((credentials) => {
+        console.log({credentials})
+        this.props.actions.ConnectLinkedIn(credentials)
+    })
+  }
+
+  ConnectPlaid () {
+    uport.requestCredentials(
+      { requested: ['name','country','avatar'],
+        notifications: true }
+    ).then((credentials) => {
+        console.log({credentials})
+        this.props.actions.ConnectPlaid(credentials)
+    })
+  }
+  
+
   render () {
     return (
       <div margin>
@@ -71,7 +94,7 @@ class Welcome extends Component {
         <h1>Buck a loan.</h1>
         <SubText>Get a loan with your identity, Plaid, and MakerDao</SubText>
         <ConnectUport
-          onClick={this.connectUport}>
+          onClick={this.ConnectPlaid}>
           Plaid
         </ConnectUport>
         <br/>
@@ -82,7 +105,7 @@ class Welcome extends Component {
         <h1>Buck the event.</h1>
         <SubText>Verify yourself as not a bot and get event tickets with Decent</SubText>
         <ConnectUport
-          onClick={this.connectUport}>
+          onClick={this.ConnectLinkedIn}>
           LinkedIn
         </ConnectUport>
         <br/>
@@ -101,6 +124,8 @@ const mapStateToProps = (state, props) => {
     uport: state.App.uport,
     connectUportVote: state.App.connectUportVote,
     MakerDaoLoan: state.App.MakerDaoLoan,
+    ConnectLinkedIn: state.App.ConnectLinkedIn,
+    ConnectPlaid: state.App.ConnectPlaid,
   }
 }
 const mapDispatchToProps = (dispatch) => {

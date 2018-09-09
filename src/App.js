@@ -45,15 +45,15 @@ class App extends Component {
               : null
           }
           {
-            this.props.signTransactionPage === true &&
-            !this.props.collectCredentialsPage
-              ? <SignTransaction />
-              : null
-          }
-          {
             this.props.collectCredentialsPage &&
             !this.props.registerYourAppPage
               ? <CollectCredentials />
+              : null
+          }
+          {
+            this.props.signTransactionPage === true &&
+            !this.props.collectCredentialsPage
+              ? <SignTransaction />
               : null
           }
           {

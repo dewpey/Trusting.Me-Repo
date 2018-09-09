@@ -9,6 +9,13 @@ export const connectUport = (data) => {
   }
 }
 
+export const connectUportVote = (data) => {
+  return {
+    type: 'CONNECT_UPORTVOTE',
+    data
+  }
+}
+
 // //////////////////////////////////////////////
 // Get Current Shares
 // //////////////////////////////////////////////

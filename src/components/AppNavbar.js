@@ -61,7 +61,7 @@ class AppNavbar extends Component {
         <LeftArea>
           <LogoLink href='/'>Trusting.Me</LogoLink>
           <span> | </span>
-          <DemoText>Wyoming County Clerk</DemoText>
+          <DemoText>Wyoming Trust Anchor</DemoText>
         </LeftArea>
 
         <RightArea>

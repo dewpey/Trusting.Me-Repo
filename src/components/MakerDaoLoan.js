@@ -37,14 +37,18 @@ class MakerDaoLoan extends Component {
     render() {
         const makerBrowser = Maker.create('browser');
         const makerTest = Maker.create('test');
-        maker.authenticate();
-        const cdp = maker.openCdp();
-
-        cdp.ockEth(0.25);
+        maker.authenticate(()=>{
+            const cdp = maker.openCdp();
+            cdp.ockEth(0.25);
         cdp.drawDai(50);
-
         const debt = cdp.getDebtValue();
         console.log(debt.toString);
+        })
+       
+
+        
+
+        
         
         return (
             <div>

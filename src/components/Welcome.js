@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import * as AppActions from '../actions/AppActions'
 import styled from 'styled-components'
 import { uport } from '../utilities/uportSetup'
-
+import Columns from 'react-columns'
 const WelcomeWrap = styled.section``
 const ConnectUport = styled.button``
 const ConnectUportVote = styled.button``
@@ -23,6 +23,7 @@ class Welcome extends Component {
     this.MakerDaoLoan = this.MakerDaoLoan.bind(this)
     this.ConnectLinkedIn = this.ConnectLinkedIn.bind(this)
     this.ConnectPlaid = this.ConnectPlaid.bind(this)
+    
   }
 
   connectUport () {
@@ -79,20 +80,24 @@ class Welcome extends Component {
   render () {
     return (
       <div margin>
+      <Columns columns="3">
       <WelcomeWrap>
         <h1>Buck the vote.</h1>
-        <SubText>Voter registration and voting system on Ethereum.</SubText>
-        <ConnectUport
-          onClick={this.connectUport}>
-          Vote
-        </ConnectUport>
-        <br/>
+        
+        <SubText><b>Tier 1:</b> Voter registration and voting system on Ethereum.</SubText>
         <ConnectUportVote
           onClick={this.connectUportVote}>
           Voter registration
         </ConnectUportVote>
+        <br/>
+        <ConnectUport
+          onClick={this.connectUport}>
+          Vote
+        </ConnectUport>
+        </WelcomeWrap> 
+        <WelcomeWrap> 
         <h1>Buck a loan.</h1>
-        <SubText>Get a loan with your identity, Plaid, and MakerDao</SubText>
+        <SubText><b>Tier 2</b> Get a loan with your identity, Plaid, and MakerDao</SubText>
         <ConnectUport
           onClick={this.ConnectPlaid}>
           Plaid
@@ -102,8 +107,10 @@ class Welcome extends Component {
           onClick={this.MakerDaoLoan}>
           Loan
         </ConnectUportVote>
+        </WelcomeWrap>
+        <WelcomeWrap> 
         <h1>Buck the event.</h1>
-        <SubText>Verify yourself as not a bot and get event tickets with Decent</SubText>
+        <SubText><b>Tier 3:</b> Verify yourself as not a bot and get event tickets with Decent</SubText>
         <ConnectUport
           onClick={this.ConnectLinkedIn}>
           LinkedIn
@@ -113,7 +120,8 @@ class Welcome extends Component {
           onClick={this.connectUportVote}>
           Get a ticket
         </ConnectUportVote>
-      </WelcomeWrap>
+        </WelcomeWrap> 
+      </Columns>
       </div>
     )
   }

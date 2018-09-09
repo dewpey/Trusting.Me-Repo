@@ -48,6 +48,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "@makerdao/dai": "^0.7.1",
     "@material-ui/core": "^3.0.3",
     "@zxing/library": "^0.8.3",
     "aws-cloudfront-invalidate": "^0.1.3",

@@ -14,6 +14,7 @@ import './index.css'
 const StoreInstance = Store()
 
 ReactDOM.render(
+  
   <Provider store={StoreInstance}>
     <App />
   </Provider>,

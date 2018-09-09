@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { configure, BarcodePicker as ScanditSDKBarcodePicker } from "scandit-sdk";
 
 // Configure the library and activate it with a license key
 configure("").catch(error => {

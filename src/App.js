@@ -14,7 +14,7 @@ import SignTransaction from './components/SignTransaction'
 import CollectCredentials from './components/CollectCredentials'
 import RegisterYourApp from './components/RegisterYourApp'
 import LogOut from './components/LogOut'
-
+import MakerDaoLoan from './components/MakerDaoLoan' 
 const AppWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -79,7 +79,8 @@ const mapStateToProps = (state, props) => {
     signTransactionPage: state.App.signTransactionPage,
     collectCredentialsPage: state.App.collectCredentialsPage,
     registerYourAppPage: state.App.registerYourAppPage,
-    logOutPage: state.App.logOutPage
+    logOutPage: state.App.logOutPage,
+    MakerDaoLoan: state.App.MakerDaoLoan,
   }
 }
 const mapDispatchToProps = (dispatch) => {

@@ -20,6 +20,7 @@ class Welcome extends Component {
     super(props)
     this.connectUport = this.connectUport.bind(this)
     this.connectUportVote = this.connectUportVote.bind(this)
+    this.MakerDaoLoan = this.MakerDaoLoan.bind(this)
   }
 
   connectUport () {
@@ -42,9 +43,19 @@ class Welcome extends Component {
     })
   }
 
+  MakerDaoLoan () {
+    uport.requestCredentials(
+      { requested: ['name','country','avatar'],
+        notifications: true }
+    ).then((credentials) => {
+        console.log({credentials})
+        this.props.actions.MakerDaoLoan(credentials)
+    })
+  }
 
   render () {
     return (
+      <div margin>
       <WelcomeWrap>
         <h1>Buck the vote.</h1>
         <SubText>Voter registration and voting system on Ethereum.</SubText>
@@ -57,7 +68,30 @@ class Welcome extends Component {
           onClick={this.connectUportVote}>
           Voter registration
         </ConnectUportVote>
+        <h1>Buck a loan.</h1>
+        <SubText>Get a loan with your identity, Plaid, and MakerDao</SubText>
+        <ConnectUport
+          onClick={this.connectUport}>
+          Plaid
+        </ConnectUport>
+        <br/>
+        <ConnectUportVote
+          onClick={this.MakerDaoLoan}>
+          Loan
+        </ConnectUportVote>
+        <h1>Buck the event.</h1>
+        <SubText>Verify yourself as not a bot and get event tickets with Decent</SubText>
+        <ConnectUport
+          onClick={this.connectUport}>
+          LinkedIn
+        </ConnectUport>
+        <br/>
+        <ConnectUportVote
+          onClick={this.connectUportVote}>
+          Get a ticket
+        </ConnectUportVote>
       </WelcomeWrap>
+      </div>
     )
   }
 }
@@ -66,6 +100,7 @@ const mapStateToProps = (state, props) => {
   return {
     uport: state.App.uport,
     connectUportVote: state.App.connectUportVote,
+    MakerDaoLoan: state.App.MakerDaoLoan,
   }
 }
 const mapDispatchToProps = (dispatch) => {

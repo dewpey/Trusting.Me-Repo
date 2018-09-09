@@ -16,6 +16,13 @@ export const connectUportVote = (data) => {
   }
 }
 
+export const MakerDaoLoan = (data) => {
+  return {
+    type: 'CONNECT_MAKERDAOLOAN',
+    data
+  }
+}
+
 // //////////////////////////////////////////////
 // Get Current Shares
 // //////////////////////////////////////////////

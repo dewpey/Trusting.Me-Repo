@@ -16,7 +16,12 @@ export default(state = initialState, payload) => {
         uport: payload.data,
         collectCredentialsPage: true
       }
-      
+      case 'CONNECT_MAKERDAOLOAN':
+      return {
+        ...state,
+        uport: payload.data,
+        MakerDaoLoan: true
+      }  
     case 'GET_CURRENT_SHARES_REQUEST':
       return {
         ...state,

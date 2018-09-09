@@ -5,10 +5,9 @@ import {uport} from '../utilities/uportSetup'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as AppActions from '../actions/AppActions'
-import * as ScanditSDK from "scandit-sdk";
 import styled from 'styled-components'
-
 import {BrowserBarcodeReader, VideoInputDevice, video} from '@zxing/library';
+import PlaidLink from 'react-plaid-link';
 
 const codeReader = new BrowserBarcodeReader();
 
@@ -147,11 +146,34 @@ class CollectCredentials extends Component {
         event.preventDefault();
     }
 
+    handleOnSuccess(token, metadata) {
+        console.log(token + " " + metadata)
+      }
+      handleOnExit(error, metadata) {
+        console.log('link: user exited');
+        console.log(error, metadata);
+      }
+      handleOnLoad() {
+        console.log('link: loaded');
+      }
+      handleOnEvent(eventname, metadata) {
+        console.log('link: user event', eventname, metadata);
+      }
     render(props) {
         
         return (
-                
+            <div>
+            <PlaidLink
+            clientName="Trusting.me"
+            env="sandbox"
+            product={["auth","transactions"]}
+            publicKey="edf22493e721471cd922137e004a59"
+            onExit={this.handleOnExit}
+            onSuccess={this.handleOnSuccess}>
+            Open Link and connect your bank!
+          </PlaidLink>
                 <form>
+                   
                 <h4>Register user to vote.</h4>
                     <input
                         id="name"
@@ -170,6 +192,7 @@ class CollectCredentials extends Component {
                         onChange={this.handleChange}/>
                     <CredsButton onClick={this.credentialsbtnClickD}>Set</CredsButton>
                 </form>
+                </div>
         )
     }
 }

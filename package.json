@@ -57,6 +57,7 @@
     "qrious": "^2.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-plaid-link": "^1.0.2",
     "react-radio-buttons": "^1.2.2",
     "react-redux": "^5.0.2",
     "rebass": "^2.3.2",

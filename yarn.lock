@@ -5424,6 +5424,16 @@ react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
+react-load-script@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/react-load-script/-/react-load-script-0.0.6.tgz#db6851236aaa25bb622677a2eb51dad4f8d2c258"
+
+react-plaid-link@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-plaid-link/-/react-plaid-link-1.0.2.tgz#7cc45e009758e6cad02082292678b12ddce56213"
+  dependencies:
+    react-load-script "0.0.6"
+
 react-radio-buttons@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/react-radio-buttons/-/react-radio-buttons-1.2.2.tgz#9c07a0cfacc9fd4927fa9ed96392e93b600614a9"
